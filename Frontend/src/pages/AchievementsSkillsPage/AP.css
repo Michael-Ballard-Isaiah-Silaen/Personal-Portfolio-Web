@@ -1,0 +1,35 @@
+.timeline-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.slider {
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  width: 20px;
+  height: 100%;
+}
+
+.timeline-labels {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 60px;
+}
+
+.label {
+  text-align: center;
+}
+
+.year-display {
+  margin-top: 40px;
+  font-size: 20px;
+}
