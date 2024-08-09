@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { CurrentUserContext } from "../lib/contexts/CurrentUserContext";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
@@ -7,7 +6,6 @@ import { NavHashLink } from "react-router-hash-link";
 import mikelogo from "../components/universal/mikelogo.png";
 
 const Navbar = () => {
-  const currentUserContext = useContext(CurrentUserContext);
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -125,61 +123,21 @@ const Navbar = () => {
             Home
           </NavHashLink>
           <NavHashLink
-            to="features"
+            to="/projects"
             smooth={true}
             className="cursor-pointer hover:text-blue-600"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Main Features
+            Projects
           </NavHashLink>
           <NavHashLink
-            to="about"
+            to="/achievements"
             smooth={true}
             className="cursor-pointer hover:text-blue-600"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Main Features
+            Achievements
           </NavHashLink>
-          <NavLink
-            to="/reports"
-            className="hover:text-blue-600"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Reports Page
-          </NavLink>
-          <NavLink
-            to="/news"
-            className="hover:text-blue-600"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            News Page
-          </NavLink>
-          {currentUserContext?.currentUser?.username ? (
-            <NavLink
-              to={`/profile/${currentUserContext.currentUser.username}`}
-              className="hover:text-blue-600"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Profile
-            </NavLink>
-          ) : (
-            <>
-              <NavLink
-                to="/auth/sign-up"
-                className="hover:text-blue-600"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign Up
-              </NavLink>
-              <NavLink
-                to="/auth/sign-in"
-                className="hover:text-blue-600"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign In
-              </NavLink>
-            </>
-          )}
         </nav>
       </div>
     </header>
