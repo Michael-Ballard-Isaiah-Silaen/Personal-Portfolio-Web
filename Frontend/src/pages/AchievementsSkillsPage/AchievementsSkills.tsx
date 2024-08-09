@@ -30,7 +30,7 @@ const AchievementsSkillsPage: React.FC = () => {
             className="slider"
             onChange={handleSliderChange}
             style={{
-              writingMode: "bt-lr",
+              
               WebkitAppearance: "slider-vertical",
             }}
           />
