@@ -99,6 +99,12 @@ const Navbar = () => {
                 >
                   Achievements
                 </NavLink>
+                <NavLink
+                  to="/personal"
+                  className="text-nowrap p-2 hover:text-blue-500"
+                >
+                  Personal Page
+                </NavLink>
               </div>
             </div>
           </button>
@@ -137,6 +143,14 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Achievements
+          </NavHashLink>
+          <NavHashLink
+            to="/personal"
+            smooth={true}
+            className="cursor-pointer hover:text-blue-600"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Personal Page
           </NavHashLink>
         </nav>
       </div>
